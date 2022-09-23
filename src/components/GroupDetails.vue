@@ -28,7 +28,7 @@ watch(() => props.groupName, (newGroupName) => {
 		<hr class="mb-1 dark:border-gray-500">
 
 		<div class="flex flex-col">
-			<Student v-for="student in group.students" :student="student" />
+			<Student v-for="student in group.students" :key="student.id" :student="student.name" />
 		</div>
 
 	</div>

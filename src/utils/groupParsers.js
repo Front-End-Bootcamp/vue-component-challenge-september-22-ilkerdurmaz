@@ -5,11 +5,11 @@ export const getGroup=(data,groupName)=>{
     if(isThere){
         const members=data.filter(member=>member.group===groupName)
 				const assistant=members.find(member=>member.type=="assistant")
-				const students=members.map(student=>student.name) 
+				const students=members.filter(member=>member.type!=="assistant")
         return {
             group:groupName,
             "assistant":assistant.name,
-            "students": students.filter(student=>student!==assistant.name)
+            "students": students
         }
     }
     return `There isn't any ${groupName} member in this data.`  
