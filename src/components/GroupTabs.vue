@@ -10,14 +10,11 @@ const selectedGroupName = ref('Orchid')
 function clickHandler(groupName) {
 	selectedGroupName.value = groupName
 }
-
 </script>
-	
-<template>
 
+<template>
 	<div class="flex flex-col">
-		<div
-			class="font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+		<div class="font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
 			<ul class="flex flex-wrap -mb-px">
 				<li class="mr-2" v-for="(groupName,index) in groupNames" :key="index">
 					<span class="tab" @click="clickHandler(groupName)"
@@ -30,7 +27,6 @@ function clickHandler(groupName) {
 			<GroupDetails :groupName='selectedGroupName' />
 		</div>
 	</div>
-
 </template>
 	
 <style scoped lang="postcss">
@@ -43,7 +39,7 @@ function clickHandler(groupName) {
 }
 
 .tabPassive {
-	@apply hover:text-gray-600 hover:text-gray-300 hover:border-gray-300 cursor-pointer
+	@apply hover: text-gray-600 hover:text-gray-300 hover:border-gray-300 cursor-pointer
 }
 </style>
 	
